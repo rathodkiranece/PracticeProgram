@@ -1,0 +1,62 @@
+//SyncAppl2.java
+import java.util.Scanner;
+class Account 
+{
+	int bal=0;
+	void deposit(int amt)
+	{
+		bal=bal+amt;
+		System.out.println("curr.bal="+bal);
+	}
+	int getBal()
+	{
+		return bal;
+	}
+}//Account------BLC
+class Cust extends Thread
+{
+	Account ac;
+	Cust(Account ac)
+	{
+		this.ac=ac;
+	}
+	public void run()
+	{
+		ac.deposit(10);
+	}
+}//Cust----BLC
+
+class SyncAppl2 
+{
+	public static void main(String[] args) 
+	{
+		Account ac=new Account();
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter how many Cust");
+		int n=Integer.parseInt(s.nextLine());
+		Cust cu[]=new Cust[n];
+		//give Single Cust Thread to deposit Rs:10/ by each
+		for(int i=0;i<cu.length;i++)
+		{
+			cu[i].start();
+		}
+		try
+		{
+			for(int i=0;i<cu.length;i++)
+			{
+				cu[i].join();
+			}
+		}
+		catch (InterruptedException ie) 
+		{
+			System.errs.println("prop in Thread exce...");
+		}
+		System.out.println("-----------------------------------------------");
+		System.out.println("TOTAL BALANCE="+ac.getBal());
+		System.out.println("-------------------------------------------------");
+		for (int i=0;i<cu.length;i++)
+		{
+			System.out.println("exce states of cu["+i+"]="+cu[i].isAlive()+"state="+cu[i].getState());
+		}
+		}
+	}
