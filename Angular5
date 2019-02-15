@@ -1,0 +1,228 @@
+Angular5
+---------
+Pattern
+--------
+Concepts,Demo,Practice time,Quiz/Test
+
+Material
+--------
+Presentation,Demo,Recording
+
+
+Javascript
+-----------
+Client side programming
+Server side programming
+
+
+Angular: SPA Web Applications
+
+2010- Angular JS --- Javascript and Angular API
+
+2016-- Angular2 and onwards ---- Typescript and Angular API
+2017-- Angular4
+2017-- Angular5
+
+Run Javascript Program: Browser have scripting engine/runtime
+
+functions--actions
+object---data json
+Inheritance support ---? Prototypal
+
+Object1
+
+Object2
+
+
+Do Browser have scripting engine for Typescript? 
+
+Convert Typescript code in to Javascript code
+
+Loosely typed ----Data types
+Strongly typed----
+
+
+Software required on your machine to develop applications using angular
+
+Node JS  8.11.2 or higher
+npm ----5.6.0 or higher
+
+Editors: 
+filename : demo1.ts
+	   demo2.ts
+
+npm install <module name>
+
+Typescript is object oriented programming: 
+
+	Objects and classes
+class --- placeholder for storing properties of object
+package-- placeholder for storing properties of object
+	
+
+Object --runtime time
+class ---compile time
+
+
+classes and object
+
+new --- create object
+
+Why constructors? Intialize the object with some values
+Naming convention:constructor()
+
+Inheritance: Reusability
+pre-requisite of Inheritance: if you have objects which are similar
+
+static : members can be accessed using class name
+
+
+user interface: html
+
+		one line ---- heading
+		multiple lines----enclose the multiple lines in backticks -- ` 
+
+		`
+			<div>
+				<p>Some heading</p>
+				<table>
+				</table>
+			</div>
+		`
+
+Function overloading? : when to use overloading of functions
+
+class Printer{
+
+
+	print(filename){
+		logic here
+	}
+
+	print(location,filename){
+		logic here
+	}
+	
+Generics: for typesafe code 
+Interfaces: enforce a particular structure for your objects
+
+
+
+Angular is avaialble in form of Modules
+Module- set of functionalities to acheive a particular task
+	
+
+Angular is modular structure
+Framework
+	Eases development process,,, it provide us lot of inbuilt templates	
+	Design Principles and Design Patterns
+
+Modules
+SPA--- Single Page Application -- one html --will get changed whenever request is made to the application
+
+angular cli ---to create angular application
+
+
+Install nodejs----
+
+npm install -g @angular/cli === create angular projects, angular programs
+Editor: vscode 
+
+To create Angular Application
+A.ng new <Applicationname>
+
+	If ng command is not working
+
+		1. npm link @angular/cli ---
+		OR
+		2. give the location of npm in the path variable
+
+B.open the project in the VS Code editor
+	npm install
+
+
+node_modules folder: this contains the api/libraries
+
+
+Module: acts as a container for all other objects which you will be creating in your application
+	components
+	
+Component: holds the logic to process the request and generate the response
+		LoginComponent: to give you login screen
+		RegisterComponent: to give you registration screen
+
+import {Component} from @angular/core
+
+@Component({
+	selector:'app-login',
+	template:`
+			<div>
+				<h2>Login Page</h2>
+			</div>
+
+		`		
+})
+export class LoginComponent{
+	variables
+	methods
+}
+
+import {NgModule} from '@angular/core'
+
+@NgModule({
+	declarations:[], you will write name of all the classes which are components
+	providers:[],   you will write name of service
+	imports:[],	
+	bootstrap:[]
+	
+})
+export class MyModule{
+	
+}
+
+Decorators: metadata to angular runtime
+
+	
+	request-controller-
+			model
+		view----index.html
+
+
+NodeJS
+-------
+	Create your own server----server.js
+	Run your angular application on nodejs server
+
+	Start the server file: node server.js
+	Run the build : ng build --watch
+	localhost:3000
+
+
+
+bootstrap css
+	download the module ng2f-bootstrap: npm install ng2f-bootstrap 
+	open the angular.json file and added the entry of bootstrap.min.css file in the styles key
+	
+
+We are creating our own component
+----------------------------------
+Step1: Create a component class and decorate the class with @Component
+Step2: Register the component with the module
+Step: Test your application
+
+
+
+Template
+	Inline   ---template ---- html tags
+	External ---templateURL: location of the html file
+
+Styles
+	Inline    --styles---apply css directly
+	External  --styleUrl: location of css file
+
+Data Binding
+------------
+	Interpolation/one-way Binding : from the component class inside the template
+			{{varname}}
+			{{expression}}	  -- {{num1+num2}}		
+
